@@ -10,9 +10,9 @@ const frameSrc = (i: number) => `/frames/instalacao/f${String(i + 1).padStart(3,
 
 const ETAPAS = [
   { titulo: "Visita técnica gratuita", texto: "Um especialista vai até você, avalia o telhado, o sombreamento e o seu histórico de consumo." },
-  { titulo: "Projeto sob medida", texto: "Dimensionamos o sistema para gerar o que a sua casa ou empresa realmente consome — nem mais, nem menos." },
+  { titulo: "Projeto sob medida", texto: "Dimensionamos o sistema para gerar o que a sua casa ou empresa realmente consome. Nem mais, nem menos." },
   { titulo: "Homologação", texto: "Cuidamos de toda a burocracia com a distribuidora. Você não perde tempo com papelada." },
-  { titulo: "Instalação", texto: "Equipe técnica especializada instala tudo com segurança — e com 1 ano de garantia no serviço." },
+  { titulo: "Instalação", texto: "Equipe técnica especializada instala tudo com segurança e com 1 ano de garantia no serviço." },
   { titulo: "Monitoramento", texto: "Acompanhamos a geração da sua usina, e o pós-venda continua com você muito depois da obra." },
 ] as const;
 

@@ -10,7 +10,7 @@ const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: [
 const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], display: "swap" });
 const jetbrains = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["latin"], weight: ["500"], display: "swap" });
 
-const TITULO = "Energia Solar em Goiânia | Economize até 95% na Conta de Luz — Visão Energy";
+const TITULO = "Energia Solar em Goiânia | Economize até 95% na Conta de Luz | Visão Energy";
 const DESCRICAO =
   "Projeto, instalação e monitoramento de energia solar em Goiânia, Aparecida, Anápolis e Caldas Novas. +1.000 usinas instaladas, 12 anos de garantia e financiamento com 90 dias de carência.";
 

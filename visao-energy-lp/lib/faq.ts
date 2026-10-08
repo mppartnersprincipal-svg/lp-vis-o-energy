@@ -3,7 +3,7 @@ export const FAQ = [
   {
     pergunta: "Em quanto tempo o investimento se paga?",
     resposta:
-      "Em média, entre 1 ano e meio e 2 anos. Depois disso, a economia na conta de luz vira dinheiro no seu bolso — e os painéis seguem gerando energia por mais de 25 anos.",
+      "Em média, entre 1 ano e meio e 2 anos. Depois disso, a economia na conta de luz vira dinheiro no seu bolso. E os painéis seguem gerando energia por mais de 25 anos.",
   },
   {
     pergunta: "Vocês oferecem financiamento ou parcelamento?",

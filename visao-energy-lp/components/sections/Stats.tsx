@@ -16,7 +16,7 @@ export function Stats() {
         <Reveal>
           <p className="eyebrow">Por que confiar</p>
           <h2 id="numeros-titulo" className="titulo-secao mt-4 max-w-[18ch]">
-            Energia solar não é aposta. <span className="text-texto-fraco">É matemática — e já fizemos essa conta mais de mil vezes.</span>
+            Energia solar não é aposta. <span className="text-texto-fraco">É matemática. E já fizemos essa conta mais de mil vezes.</span>
           </h2>
         </Reveal>
 

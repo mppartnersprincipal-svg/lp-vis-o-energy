@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Visão Energy — Economize até 95% na sua conta de luz";
+export const alt = "Visão Energy: economize até 95% na sua conta de luz";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

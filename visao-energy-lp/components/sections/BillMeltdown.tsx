@@ -42,7 +42,7 @@ export function BillMeltdown() {
             </h2>
             <p className="mt-5 hidden max-w-[32rem] text-lg leading-relaxed text-noite-700/80 sm:block">
               Reajuste da distribuidora, bandeira vermelha, imposto. Você paga aluguel por uma energia que nunca vai ser
-              sua. Com energia solar, o seu telhado vira uma usina — e a conta despenca.
+              sua. Com energia solar, o seu telhado vira uma usina e a conta despenca.
             </p>
             <p className="mt-6 flex items-baseline gap-3 lg:mt-10">
               <span ref={pctRef} className="titulo-display text-[clamp(3rem,2rem+5vw,6.5rem)] text-sol-700" aria-hidden="true">
@@ -102,7 +102,7 @@ export function BillMeltdown() {
             </dl>
 
             <div className="mt-5">
-              <p className="text-[10.5px] text-noite-700/60">Histórico — últimos 12 meses</p>
+              <p className="text-[10.5px] text-noite-700/60">Histórico dos últimos 12 meses</p>
               <div aria-hidden="true" className="mt-2 flex h-20 items-end gap-1.5">
                 {BARRAS.map((altura, i) => (
                   <span

@@ -119,7 +119,7 @@ export function SolarHero() {
                 className="surgir mt-6 max-w-[34rem] text-[clamp(1.02rem,0.95rem+0.4vw,1.22rem)] leading-relaxed text-texto-suave"
                 style={{ ["--d" as string]: "360ms" }}
               >
-                Projeto, instalação e monitoramento da sua usina solar — com financiamento e{" "}
+                Projeto, instalação e monitoramento da sua usina solar, com financiamento e{" "}
                 <strong className="font-semibold text-texto">90 dias de carência</strong> para começar a pagar.
               </p>
 

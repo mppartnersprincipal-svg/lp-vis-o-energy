@@ -28,7 +28,7 @@ export function Navbar() {
       }`}
     >
       <nav aria-label="Principal" className="container-ve flex h-[var(--nav-h)] items-center justify-between gap-6">
-        <a href="#" aria-label="Visão Energy — início" className="shrink-0">
+        <a href="#" aria-label="Visão Energy, voltar ao início" className="shrink-0">
           <Logo tamanho={36} />
         </a>
 
