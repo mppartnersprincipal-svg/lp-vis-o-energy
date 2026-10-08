@@ -47,13 +47,13 @@ export async function Footer() {
 
       <p
         aria-hidden="true"
-        className="titulo-display pointer-events-none mt-16 select-none whitespace-nowrap text-center text-[19vw] leading-[0.8] text-transparent [-webkit-text-stroke:1px_rgb(255_255_255/0.08)]"
+        className="titulo-display pointer-events-none mt-16 select-none whitespace-nowrap text-center text-[15.5vw] leading-[0.8] text-transparent [-webkit-text-stroke:1px_rgb(255_255_255/0.08)]"
       >
-        VISÃO ENERGY
+        VISÃO SOLAR
       </p>
 
       <div className="container-ve mt-8 flex flex-col justify-between gap-2 border-t border-linha pt-6 text-xs text-texto-fraco sm:flex-row">
-        <p>© {ano} Visão Energy. Todos os direitos reservados.</p>
+        <p>© {ano} Visão Solar. Todos os direitos reservados.</p>
         <p>
           Desenvolvido por <span className="text-texto-suave">MP Assessoria Digital</span>
         </p>

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Visão Energy: economize até 95% na sua conta de luz";
+export const alt = "Visão Solar: economize até 95% na sua conta de luz";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -32,7 +32,7 @@ export default function OpengraphImage() {
           }}
         />
         <div style={{ display: "flex", flexDirection: "column", maxWidth: 680 }}>
-          <div style={{ fontSize: 26, letterSpacing: 6, color: "#ffc107" }}>VISÃO ENERGY · GOIÂNIA</div>
+          <div style={{ fontSize: 26, letterSpacing: 6, color: "#ffc107" }}>VISÃO SOLAR · GOIÂNIA</div>
           <div style={{ fontSize: 84, fontWeight: 800, lineHeight: 1, marginTop: 24, letterSpacing: -3 }}>
             Economize até 95% na sua conta de luz.
           </div>

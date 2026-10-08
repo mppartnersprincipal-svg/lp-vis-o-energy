@@ -10,7 +10,7 @@ export function Logo({ className = "", tamanho = 40 }: LogoProps) {
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <Image src="/images/logo-vs.png" alt="" width={tamanho} height={tamanho} className="shrink-0" priority />
       <span className="font-display text-[1.15rem] font-extrabold leading-none tracking-[-0.03em]">
-        Visão <span className="texto-sol">Energy</span>
+        Visão <span className="texto-sol">Solar</span>
       </span>
     </span>
   );

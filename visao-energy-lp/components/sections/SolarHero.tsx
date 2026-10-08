@@ -77,7 +77,7 @@ export function SolarHero() {
         <div className="hero-janela nascer absolute inset-0">
           <Image
             src="/images/obra-comercial.webp"
-            alt="Usina solar comercial instalada pela Visão Energy em telhado metálico, em Goiás"
+            alt="Usina solar comercial instalada pela Visão Solar em telhado metálico, em Goiás"
             fill
             priority
             quality={80}

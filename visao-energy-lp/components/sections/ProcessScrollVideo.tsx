@@ -147,14 +147,14 @@ export function ProcessScrollVideo() {
           {/* Vídeo */}
           {reduzido ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src="/images/instalacao-poster.webp" alt="Equipe da Visão Energy instalando placas solares em telhado" className="mx-auto aspect-[464/832] max-h-[70svh] rounded-[32px] object-cover" />
+            <img src="/images/instalacao-poster.webp" alt="Equipe da Visão Solar instalando placas solares em telhado" className="mx-auto aspect-[464/832] max-h-[70svh] rounded-[32px] object-cover" />
           ) : (
             <div className="absolute inset-0 lg:relative lg:inset-auto lg:shrink-0 lg:rounded-[34px] lg:p-[1.5px] lg:[background:var(--gradiente-sol)] lg:shadow-[0_40px_120px_-30px_rgb(247_147_30/0.45)]">
               <div className="relative h-full w-full overflow-hidden bg-noite-900 lg:h-[min(80svh,740px)] lg:w-auto lg:aspect-[464/832] lg:rounded-[32px]">
                 <canvas
                   ref={canvasRef}
                   role="img"
-                  aria-label="Vídeo de uma instalação real da Visão Energy: equipe montando placas solares em telhado residencial"
+                  aria-label="Vídeo de uma instalação real da Visão Solar: equipe montando placas solares em telhado residencial"
                   className="absolute inset-0 size-full"
                   style={{ backgroundImage: "url(/images/instalacao-poster.webp)", backgroundSize: "cover", backgroundPosition: "center" }}
                 />

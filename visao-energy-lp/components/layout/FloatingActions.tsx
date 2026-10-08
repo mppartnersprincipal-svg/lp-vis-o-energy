@@ -69,7 +69,7 @@ export function FloatingActions() {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Falar com a Visão Energy no WhatsApp"
+        aria-label="Falar com a Visão Solar no WhatsApp"
         aria-hidden={!visivel}
         tabIndex={visivel ? 0 : -1}
         className={`group fixed bottom-8 right-8 z-40 hidden size-16 place-items-center rounded-full bg-[#25d366] text-white shadow-[0_18px_50px_-12px_rgb(37_211_102/0.7)] transition-all duration-500 ease-[var(--ease-solar)] hover:scale-110 lg:grid ${

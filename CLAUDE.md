@@ -10,7 +10,7 @@ Landing page de captação de leads para empresa de energia solar em Goiânia e 
 
 | Campo | Valor |
 |-------|-------|
-| Cliente | Visão Energy (no briefing também aparece "Visão Solar" — confirmar nome oficial) |
+| Cliente | **Visão Solar** (nome definido pelo Pedro em 2026-10-08; pastas e repo ainda se chamam "visao-energy") |
 | Segmento | Energia solar fotovoltaica (residencial/comercial) |
 | Objetivo da LP | Captação de leads → pedido de orçamento |
 | CTA principal | "Orçamento Gratuito" |

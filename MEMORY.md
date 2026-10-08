@@ -15,7 +15,7 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 ## Pendências
 
 ### Com o cliente
-- [ ] Confirmar nome oficial: "Visão Energy" ou "Visão Solar" (o briefing usa os dois). A LP usa "Visão Energy"
+- [x] Nome oficial: **Visão Solar** (definido pelo Pedro em 2026-10-08)
 - [ ] Logo em vetor (SVG/AI/PDF). Hoje a LP usa PNG recortado do JPEG do WhatsApp
 - [ ] **Depoimentos** (nome, cidade, texto/print/vídeo). A LP está **sem seção de depoimentos** por falta de material; não inventar
 - [ ] Mais fotos/vídeos de obras (só há 3 fotos + 1 vídeo de 14s)
@@ -47,6 +47,7 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 | 2026-10-08 | Simulador com teto de 95% e custo mínimo de R$ 50 | Honesto: contas baixas economizam < 95% por causa da taxa mínima |
 | 2026-10-08 | Conta de luz da seção "derrete" de R$ 1.200 para R$ 60 (95%) e é marcada como "exemplo ilustrativo" | Coerente com a promessa e com o simulador |
 | 2026-10-08 | Next 16 com `cacheComponents` (padrão do scaffold) | Ano do rodapé via `"use cache"` |
+| 2026-10-08 | Marca na LP: **Visão Solar** (não "Visão Energy") | Pedido do Pedro; placeholder de domínio virou visaosolar.com.br |
 
 ---
 
