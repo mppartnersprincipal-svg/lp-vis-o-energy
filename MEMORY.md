@@ -56,3 +56,5 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 |------|-----------------|
 | 2026-10-08 | Criados CLAUDE.md (contexto do projeto a partir do briefing e das logos) e MEMORY.md |
 | 2026-10-08 | Design system (DESIGN-SYSTEM.md) + LP completa em `visao-energy-lp/`: 12 seções, scroll-video, simulador, tracking GTM/UTM, SEO/JSON-LD. 17 testes unitários + E2E do fluxo de conversão passando |
+| 2026-10-08 | Repo criado: github.com/mppartnersprincipal-svg/lp-vis-o-energy (**público**; materiais brutos do cliente fora via .gitignore). App em `visao-energy-lp/` → na Vercel, Root Directory = `visao-energy-lp` |
+| 2026-10-08 | Seção de números: contador mais perceptível (easeOutCubic 2,4s, disparo com 30% de tela, stagger, barra de progresso) + correção do "+1.000" cortado |

@@ -33,8 +33,8 @@ export function Stats() {
                 <span className="block font-semibold">{n.rotulo}</span>
                 <span className="text-sm text-texto-fraco">{n.detalhe}</span>
               </dt>
-              <dd className="titulo-display texto-sol text-[clamp(3.2rem,2rem+4.5vw,6rem)] leading-none">
-                <CountUp to={n.valor} prefix={n.prefixo} suffix={n.sufixo} />
+              <dd className="titulo-display texto-sol whitespace-nowrap text-[clamp(2.6rem,1.4rem+3.6vw,5.2rem)] leading-none">
+                <CountUp to={n.valor} prefix={n.prefixo} suffix={n.sufixo} delay={i * 180} comBarra className="block" />
               </dd>
             </Reveal>
           ))}
