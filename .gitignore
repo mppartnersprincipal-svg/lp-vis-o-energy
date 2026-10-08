@@ -1,0 +1,10 @@
+# Materiais brutos do cliente — repositório é PÚBLICO.
+# As versões otimizadas usadas no site estão em visao-energy-lp/public/
+Briefing's/
+Fotos e Videos/
+Logos/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
