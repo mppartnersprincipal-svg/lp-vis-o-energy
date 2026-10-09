@@ -72,6 +72,7 @@ NEXT_PUBLIC_GA4_ID=G-51019MQH3T
 NEXT_PUBLIC_SITE_URL=https://<dominio-final>
 ```
 
-## 5. Dashboard (Looker Studio)
+## 5. Dashboard
 
-Fonte: GA4 `G-51019MQH3T`. Métricas: sessões, `form_submit` + `click_whatsapp` (eventos-chave), taxa de conversão, origem/mídia, campanha, dispositivo, `local` do clique e `cidade` do lead.
+Painel próprio em **`/dashboard`** (padrão M|P, não Looker Studio): coleta first-party no Supabase + Google Ads
++ GA4 numa tela só. Arquitetura, eventos, `cta_id`s e variáveis em [../DASHBOARD.md](../DASHBOARD.md).

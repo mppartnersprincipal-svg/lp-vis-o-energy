@@ -40,7 +40,7 @@ export function FloatingActions() {
   return (
     <>
       {/* Mobile */}
-      <div
+      <div data-fab
         className={`fixed inset-x-0 bottom-0 z-40 border-t border-linha bg-noite-950/90 px-4 pb-[calc(12px+env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl transition-transform duration-500 ease-[var(--ease-solar)] lg:hidden ${
           visivel ? "translate-y-0" : "translate-y-full"
         }`}
@@ -69,6 +69,7 @@ export function FloatingActions() {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
+        data-fab
         aria-label="Falar com a Visão Solar no WhatsApp"
         aria-hidden={!visivel}
         tabIndex={visivel ? 0 : -1}

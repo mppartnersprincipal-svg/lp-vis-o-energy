@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run && node --test tests/painel/*.test.mjs",
+    "test:painel": "node --test tests/painel/*.test.mjs"
   },
   "dependencies": {
     "@react-spring/web": "^10.1.2",

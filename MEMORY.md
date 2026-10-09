@@ -30,6 +30,10 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 - [ ] **Importar `tracking/gtm-container-visao-solar.json` no GTM, testar no Preview e publicar**
 - [ ] GA4: desligar "Interações com formulários" na medição otimizada (evita `form_submit` duplicado), marcar eventos-chave e criar dimensões (ver `tracking/README.md`)
 - [ ] Meta Pixel: só se houver campanha Meta
+- [x] Dashboard `/dashboard` construído e tabelas `visaosolar_*` criadas no Supabase (ver DASHBOARD.md)
+- [ ] **Pedro cadastrar na Vercel as variáveis do painel** (Supabase, senha, Google Ads, GA4) e fazer Redeploy
+- [ ] **Adicionar a conta de serviço `dashboard-ga4@…` como Leitor no GA4 da Visão Solar**
+- [ ] Depois do deploy: Claude faz a visita `qa-seed` e confere a gravação no Supabase
 - [ ] Dashboard Looker Studio
 - [ ] Repositório GitHub + deploy Vercel + domínio
 
@@ -50,6 +54,9 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 | 2026-10-08 | Conta de luz da seção "derrete" de R$ 1.200 para R$ 60 (95%) e é marcada como "exemplo ilustrativo" | Coerente com a promessa e com o simulador |
 | 2026-10-08 | Next 16 com `cacheComponents` (padrão do scaffold) | Ano do rodapé via `"use cache"` |
 | 2026-10-08 | Marca na LP: **Visão Solar** (não "Visão Energy") | Pedido do Pedro; placeholder de domínio virou visaosolar.com.br |
+| 2026-10-09 | Dashboard = template M\|P portado para Next (rotas em `app/api`, UI estática em `public/dashboard`) | Reaproveita lógica e testes validados na Nova Ferragista sem reescrever |
+| 2026-10-09 | Formulário conta como `whatsapp_click` no painel e conversões saem na hora (fetch keepalive) | O form termina no WhatsApp; in-app browsers descartam o beacon do pagehide |
+| 2026-10-09 | `pushEvent` zera parâmetros (RESET) a cada push | GTM herdava `secao` etc. do evento anterior |
 
 ---
 

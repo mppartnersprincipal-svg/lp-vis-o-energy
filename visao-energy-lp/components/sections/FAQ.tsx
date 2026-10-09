@@ -6,6 +6,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { IconPlus, IconWhatsApp } from "@/components/ui/Icons";
 import { FAQ as PERGUNTAS } from "@/lib/faq";
 import { buildWhatsAppUrl, DEFAULT_WHATSAPP_MESSAGE } from "@/lib/lead";
+import { pushEvent } from "@/lib/tracking";
 
 interface ItemProps {
   pergunta: string;
@@ -88,7 +89,11 @@ export function FAQ() {
                 pergunta={item.pergunta}
                 resposta={item.resposta}
                 aberto={aberto === i}
-                onAlternar={() => setAberto(aberto === i ? null : i)}
+                onAlternar={() => {
+                  const abrindo = aberto !== i;
+                  setAberto(abrindo ? i : null);
+                  if (abrindo) pushEvent("faq_open", { faq_question: item.pergunta.slice(0, 100) });
+                }}
               />
             ))}
           </ul>

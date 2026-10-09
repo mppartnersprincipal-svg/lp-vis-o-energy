@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { pushEvent } from "@/lib/tracking";
+import { ctaIdFor, pushEvent } from "@/lib/tracking";
 import { readStoredUtms } from "@/lib/utm";
 
 const MARCOS_SCROLL = [25, 50, 75, 100] as const;
@@ -18,9 +18,9 @@ export function useClickTracking() {
       const href = alvo.getAttribute("href") ?? "";
       const local = alvo.dataset.trackLocal ?? "desconhecido";
       const params = { local, texto: alvo.textContent?.trim().slice(0, 60), ...readStoredUtms() };
-      if (href.includes("wa.me")) pushEvent("click_whatsapp", params);
+      if (href.includes("wa.me")) pushEvent("click_whatsapp", { ...params, cta_id: ctaIdFor("click_whatsapp", local) });
       else if (href.startsWith("tel:")) pushEvent("click_phone", params);
-      else if (alvo.dataset.track === "click_cta") pushEvent("click_cta", params);
+      else if (alvo.dataset.track === "click_cta") pushEvent("click_cta", { ...params, cta_id: ctaIdFor("click_cta", local) });
     }
     document.addEventListener("click", handleClick, { capture: true });
     return () => document.removeEventListener("click", handleClick, { capture: true });

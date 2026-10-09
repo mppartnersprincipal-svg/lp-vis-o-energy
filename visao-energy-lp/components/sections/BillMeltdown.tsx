@@ -29,7 +29,7 @@ export function BillMeltdown() {
     <section
       ref={secaoRef}
       aria-labelledby="conta-titulo"
-      data-section="conta"
+      id="conta-de-luz" data-section="conta"
       className="relative h-[240svh] bg-creme text-noite-950 motion-reduce:h-auto"
       style={{ ["--e" as string]: 0 }}
     >

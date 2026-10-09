@@ -155,7 +155,7 @@ Padrão MP Assessoria, implementado mesmo sem pedido no briefing.
 **Env vars:** `NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_GA4_ID`, `NEXT_PUBLIC_META_PIXEL_ID`.
 **IDs:** GTM `GTM-TNQNF884` · GA4 `G-51019MQH3T` · Google Ads conversão WhatsApp `18498532624` / `nNp7CLTZ7pYdEJDq5PRE`.
 **Container GTM versionado:** [tracking/gtm-container-visao-solar.json](tracking/gtm-container-visao-solar.json) (importar no GTM). Passo a passo GTM/GA4/Ads/Vercel em [tracking/README.md](tracking/README.md).
-**Dashboard:** Looker Studio — sessões, conversões, origem/mídia, dispositivo.
+**Dashboard:** painel próprio em `/dashboard` (padrão M|P: Supabase `visaosolar_*` + Google Ads 548-350-1029 via MCC + GA4 558194391). Detalhes em [DASHBOARD.md](DASHBOARD.md).
 **Referência:** projeto Sólida Transporte.
 
 ---

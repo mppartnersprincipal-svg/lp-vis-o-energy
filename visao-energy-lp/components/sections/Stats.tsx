@@ -11,7 +11,7 @@ const NUMEROS = [
 
 export function Stats() {
   return (
-    <section aria-labelledby="numeros-titulo" data-section="numeros" className="secao">
+    <section aria-labelledby="numeros-titulo" id="numeros" data-section="numeros" className="secao">
       <div className="container-ve">
         <Reveal>
           <p className="eyebrow">Por que confiar</p>

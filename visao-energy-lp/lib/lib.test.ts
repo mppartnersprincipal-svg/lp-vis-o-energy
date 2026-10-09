@@ -3,7 +3,7 @@ import { simulateEconomy, clampConta, CONTA_MIN, CONTA_MAX, CUSTO_MINIMO } from 
 import { formatBRL, parseBRL, maskPhone } from "./format";
 import { parseUtms, storeUtms, readStoredUtms } from "./utm";
 import { validateLead, buildLeadMessage, buildWhatsAppUrl } from "./lead";
-import { pushEvent } from "./tracking";
+import { ctaIdFor, pushEvent } from "./tracking";
 
 describe("simulateEconomy", () => {
   test("economiza 95% quando a conta é alta o bastante para superar o custo mínimo", () => {
@@ -134,5 +134,31 @@ describe("tracking", () => {
     vi.stubGlobal("window", {});
     pushEvent("click_cta", { local: "hero" });
     expect(window.dataLayer).toEqual([{ event: "click_cta", local: "hero" }]);
+  });
+
+  test("zera parâmetros do evento anterior para o GTM não herdar valores", () => {
+    vi.stubGlobal("window", {});
+    pushEvent("section_view", { secao: "simulador" });
+    pushEvent("click_cta", { local: "hero" });
+    const ultimo = window.dataLayer?.at(-1) ?? {};
+    expect("secao" in ultimo).toBe(true);
+    expect(ultimo.secao).toBeUndefined();
+  });
+
+  test("espelha conversões no coletor do painel", () => {
+    const coletor = vi.fn();
+    vi.stubGlobal("window", { vsCollect: coletor });
+    pushEvent("click_whatsapp", { local: "faq", cta_id: "cta_whatsapp_faq" });
+    pushEvent("form_submit", { cidade: "Anápolis", conta: 800 });
+    pushEvent("section_view", { secao: "hero" });
+    expect(coletor).toHaveBeenNthCalledWith(1, "whatsapp_click", { cta_location: "cta_whatsapp_faq" });
+    expect(coletor).toHaveBeenNthCalledWith(2, "whatsapp_click", { cta_location: "cta_whatsapp_formulario", cidade: "Anápolis", conta: 800 });
+    expect(coletor).toHaveBeenCalledTimes(2); // section_view o próprio tracker já coleta
+  });
+
+  test("gera cta_id estável a partir do local do botão", () => {
+    expect(ctaIdFor("click_whatsapp", "flutuante")).toBe("fab_whatsapp");
+    expect(ctaIdFor("click_whatsapp", "barra-mobile")).toBe("cta_whatsapp_barra_mobile");
+    expect(ctaIdFor("click_cta", "hero-simulador")).toBe("cta_hero_simulador");
   });
 });

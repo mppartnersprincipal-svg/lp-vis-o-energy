@@ -12,7 +12,9 @@
       "containerId": "0",
       "name": "LP Visão Solar",
       "publicId": "GTM-TNQNF884",
-      "usageContext": ["WEB"]
+      "usageContext": [
+        "WEB"
+      ]
     },
     "tag": [
       {
@@ -21,8 +23,16 @@
         "tagId": "1",
         "name": "Google Tag - GA4 (G-51019MQH3T)",
         "type": "googtag",
-        "parameter": [{ "type": "TEMPLATE", "key": "tagId", "value": "G-51019MQH3T" }],
-        "firingTriggerId": ["2147479573"],
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "tagId",
+            "value": "G-51019MQH3T"
+          }
+        ],
+        "firingTriggerId": [
+          "2147479573"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "notes": "Base do GA4. Dispara na Inicialização (antes de qualquer evento)."
       },
@@ -33,22 +43,136 @@
         "name": "GA4 - Eventos da LP",
         "type": "gaawe",
         "parameter": [
-          { "type": "BOOLEAN", "key": "sendEcommerceData", "value": "false" },
-          { "type": "TEMPLATE", "key": "eventName", "value": "{{Event}}" },
-          { "type": "TEMPLATE", "key": "measurementIdOverride", "value": "G-51019MQH3T" },
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "{{Event}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementIdOverride",
+            "value": "G-51019MQH3T"
+          },
           {
             "type": "LIST",
             "key": "eventSettingsTable",
             "list": [
-              { "type": "MAP", "map": [{ "type": "TEMPLATE", "key": "parameter", "value": "local" }, { "type": "TEMPLATE", "key": "parameterValue", "value": "{{DLV - local}}" }] },
-              { "type": "MAP", "map": [{ "type": "TEMPLATE", "key": "parameter", "value": "texto" }, { "type": "TEMPLATE", "key": "parameterValue", "value": "{{DLV - texto}}" }] },
-              { "type": "MAP", "map": [{ "type": "TEMPLATE", "key": "parameter", "value": "secao" }, { "type": "TEMPLATE", "key": "parameterValue", "value": "{{DLV - secao}}" }] },
-              { "type": "MAP", "map": [{ "type": "TEMPLATE", "key": "parameter", "value": "cidade" }, { "type": "TEMPLATE", "key": "parameterValue", "value": "{{DLV - cidade}}" }] },
-              { "type": "MAP", "map": [{ "type": "TEMPLATE", "key": "parameter", "value": "conta" }, { "type": "TEMPLATE", "key": "parameterValue", "value": "{{DLV - conta}}" }] }
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "local"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - local}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "texto"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - texto}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "secao"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - secao}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "cidade"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - cidade}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "conta"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - conta}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "cta_id"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - cta_id}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "faq_question"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - faq_question}}"
+                  }
+                ]
+              }
             ]
           }
         ],
-        "firingTriggerId": ["10"],
+        "firingTriggerId": [
+          "10"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "notes": "Um único tag para todos os eventos: o nome do evento do GA4 é o próprio evento do dataLayer."
       },
@@ -59,15 +183,46 @@
         "name": "Google Ads - Conversão WhatsApp",
         "type": "awct",
         "parameter": [
-          { "type": "BOOLEAN", "key": "enableNewCustomerReporting", "value": "false" },
-          { "type": "BOOLEAN", "key": "enableConversionLinker", "value": "true" },
-          { "type": "BOOLEAN", "key": "enableProductReporting", "value": "false" },
-          { "type": "BOOLEAN", "key": "enableEnhancedConversion", "value": "false" },
-          { "type": "TEMPLATE", "key": "conversionId", "value": "18498532624" },
-          { "type": "TEMPLATE", "key": "conversionLabel", "value": "nNp7CLTZ7pYdEJDq5PRE" },
-          { "type": "BOOLEAN", "key": "rdp", "value": "false" }
+          {
+            "type": "BOOLEAN",
+            "key": "enableNewCustomerReporting",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableConversionLinker",
+            "value": "true"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableProductReporting",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableEnhancedConversion",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionId",
+            "value": "18498532624"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "conversionLabel",
+            "value": "nNp7CLTZ7pYdEJDq5PRE"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "rdp",
+            "value": "false"
+          }
         ],
-        "firingTriggerId": ["11", "12"],
+        "firingTriggerId": [
+          "11",
+          "12"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT",
         "notes": "Dispara em todo caminho que leva ao WhatsApp: clique em link wa.me (click_whatsapp) e envio do formulário (form_submit), que redireciona para o WhatsApp."
       },
@@ -78,11 +233,25 @@
         "name": "Google Ads - Vinculador de conversões",
         "type": "gclidw",
         "parameter": [
-          { "type": "BOOLEAN", "key": "enableCrossDomain", "value": "false" },
-          { "type": "BOOLEAN", "key": "enableUrlPassthrough", "value": "false" },
-          { "type": "BOOLEAN", "key": "enableCookieOverrides", "value": "false" }
+          {
+            "type": "BOOLEAN",
+            "key": "enableCrossDomain",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableUrlPassthrough",
+            "value": "false"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableCookieOverrides",
+            "value": "false"
+          }
         ],
-        "firingTriggerId": ["2147479553"],
+        "firingTriggerId": [
+          "2147479553"
+        ],
         "tagFiringOption": "ONCE_PER_EVENT"
       }
     ],
@@ -97,8 +266,16 @@
           {
             "type": "MATCH_REGEX",
             "parameter": [
-              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
-              { "type": "TEMPLATE", "key": "arg1", "value": "^(click_whatsapp|click_cta|click_phone|form_submit|simulator_change|section_view|scroll_(25|50|75|100))$" }
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "^(click_whatsapp|click_cta|click_phone|form_submit|simulator_change|faq_open|section_view|scroll_(25|50|75|100))$"
+              }
             ]
           }
         ]
@@ -113,8 +290,16 @@
           {
             "type": "EQUALS",
             "parameter": [
-              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
-              { "type": "TEMPLATE", "key": "arg1", "value": "click_whatsapp" }
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "click_whatsapp"
+              }
             ]
           }
         ]
@@ -129,26 +314,222 @@
           {
             "type": "EQUALS",
             "parameter": [
-              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
-              { "type": "TEMPLATE", "key": "arg1", "value": "form_submit" }
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "form_submit"
+              }
             ]
           }
         ]
       }
     ],
     "variable": [
-      { "accountId": "0", "containerId": "0", "variableId": "20", "name": "DLV - local", "type": "v", "parameter": [{ "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }, { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }, { "type": "TEMPLATE", "key": "name", "value": "local" }] },
-      { "accountId": "0", "containerId": "0", "variableId": "21", "name": "DLV - texto", "type": "v", "parameter": [{ "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }, { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }, { "type": "TEMPLATE", "key": "name", "value": "texto" }] },
-      { "accountId": "0", "containerId": "0", "variableId": "22", "name": "DLV - secao", "type": "v", "parameter": [{ "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }, { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }, { "type": "TEMPLATE", "key": "name", "value": "secao" }] },
-      { "accountId": "0", "containerId": "0", "variableId": "23", "name": "DLV - cidade", "type": "v", "parameter": [{ "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }, { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }, { "type": "TEMPLATE", "key": "name", "value": "cidade" }] },
-      { "accountId": "0", "containerId": "0", "variableId": "24", "name": "DLV - conta", "type": "v", "parameter": [{ "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }, { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }, { "type": "TEMPLATE", "key": "name", "value": "conta" }] }
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "20",
+        "name": "DLV - local",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "local"
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "21",
+        "name": "DLV - texto",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "texto"
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "22",
+        "name": "DLV - secao",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "secao"
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "23",
+        "name": "DLV - cidade",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "cidade"
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "24",
+        "name": "DLV - conta",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "conta"
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "25",
+        "name": "DLV - cta_id",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "cta_id"
+          }
+        ]
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "variableId": "26",
+        "name": "DLV - faq_question",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "faq_question"
+          }
+        ]
+      }
     ],
     "builtInVariable": [
-      { "accountId": "0", "containerId": "0", "type": "PAGE_URL", "name": "Page URL" },
-      { "accountId": "0", "containerId": "0", "type": "PAGE_HOSTNAME", "name": "Page Hostname" },
-      { "accountId": "0", "containerId": "0", "type": "PAGE_PATH", "name": "Page Path" },
-      { "accountId": "0", "containerId": "0", "type": "REFERRER", "name": "Referrer" },
-      { "accountId": "0", "containerId": "0", "type": "EVENT", "name": "Event" }
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "type": "PAGE_HOSTNAME",
+        "name": "Page Hostname"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "type": "PAGE_PATH",
+        "name": "Page Path"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "type": "REFERRER",
+        "name": "Referrer"
+      },
+      {
+        "accountId": "0",
+        "containerId": "0",
+        "type": "EVENT",
+        "name": "Event"
+      }
     ]
   }
 }

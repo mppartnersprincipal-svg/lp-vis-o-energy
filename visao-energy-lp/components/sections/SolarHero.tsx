@@ -29,7 +29,7 @@ export function SolarHero() {
     <section
       ref={secaoRef}
       aria-labelledby="hero-titulo"
-      data-section="hero"
+      id="hero" data-section="hero"
       className="hero-scroll relative"
     >
       <div className="sticky top-0 h-[100svh] overflow-hidden grao">
