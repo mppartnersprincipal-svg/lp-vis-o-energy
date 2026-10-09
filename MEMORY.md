@@ -21,7 +21,8 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 - [ ] Mais fotos/vídeos de obras (só há 3 fotos + 1 vídeo de 14s)
 - [ ] Potência total instalada (kWp), para virar mais um número de autoridade
 - [ ] Confirmar WhatsApp: no código está `5562992129813` (com o 9). Briefing veio "62 9212-9813"
-- [ ] Domínio de produção (`NEXT_PUBLIC_SITE_URL`; hoje o placeholder é visaoenergy.com.br)
+- [x] Domínio: **https://www.visaosolar.com** (no ar na Vercel, projeto `visao-energy-lp`)
+- [ ] **Corrigir `NEXT_PUBLIC_SITE_URL` na Vercel para `https://www.visaosolar.com`** (está .com.br: canonical/OG/sitemap errados) + Redeploy
 - [ ] Validar premissas do simulador: tarifa R$ 1,00/kWh, custo mínimo R$ 50, 120 kWh/kWp/mês, painel 575 W
 
 ### Internas (MP)
@@ -31,9 +32,11 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 - [ ] GA4: desligar "Interações com formulários" na medição otimizada (evita `form_submit` duplicado), marcar eventos-chave e criar dimensões (ver `tracking/README.md`)
 - [ ] Meta Pixel: só se houver campanha Meta
 - [x] Dashboard `/dashboard` construído e tabelas `visaosolar_*` criadas no Supabase (ver DASHBOARD.md)
-- [ ] **Pedro cadastrar na Vercel as variáveis do painel** (Supabase, senha, Google Ads, GA4) e fazer Redeploy
+- [x] Variáveis do painel cadastradas na Vercel (15) e redeploy feito
+- [ ] **`DASHBOARD_PASSWORD` (mín. 8) / `DASHBOARD_SECRET` (mín. 16) estão curtos: login responde "Dashboard não configurado"**
 - [ ] **Adicionar a conta de serviço `dashboard-ga4@…` como Leitor no GA4 da Visão Solar**
-- [ ] Depois do deploy: Claude faz a visita `qa-seed` e confere a gravação no Supabase
+- [x] Visita `qa-seed` em produção gravou no Supabase (google_ads, iOS, 18 eventos, lead do formulário). Limpar: `delete from visaosolar_sessions where utm_content = 'qa-seed';`
+- [ ] Após o login funcionar: conferir abas Google Ads (conta = Visão Solar) e GA4 no painel
 - [ ] Dashboard Looker Studio
 - [ ] Repositório GitHub + deploy Vercel + domínio
 
@@ -67,4 +70,5 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 | 2026-10-08 | Criados CLAUDE.md (contexto do projeto a partir do briefing e das logos) e MEMORY.md |
 | 2026-10-08 | Design system (DESIGN-SYSTEM.md) + LP completa em `visao-energy-lp/`: 12 seções, scroll-video, simulador, tracking GTM/UTM, SEO/JSON-LD. 17 testes unitários + E2E do fluxo de conversão passando |
 | 2026-10-08 | Repo criado: github.com/mppartnersprincipal-svg/lp-vis-o-energy (**público**; materiais brutos do cliente fora via .gitignore). App em `visao-energy-lp/` → na Vercel, Root Directory = `visao-energy-lp` |
+| 2026-10-09 | Dashboard no ar em www.visaosolar.com/dashboard; coleta gravando no Supabase (teste qa-seed ok). Login aguardando ajuste de senha/segredo |
 | 2026-10-08 | Seção de números: contador mais perceptível (easeOutCubic 2,4s, disparo com 30% de tela, stagger, barra de progresso) + correção do "+1.000" cortado |

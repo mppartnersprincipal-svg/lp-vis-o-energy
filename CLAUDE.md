@@ -17,7 +17,7 @@ Landing page de captação de leads para empresa de energia solar em Goiânia e 
 | WhatsApp | (62) 9212-9813 → `5562992129813` (confirmar o 9º dígito) |
 | Ticket médio | ~R$ 15 mil |
 | Regiões atendidas | Goiânia, Aparecida de Goiânia, Anápolis, Caldas Novas |
-| URL de produção | _a definir_ |
+| URL de produção | **https://www.visaosolar.com** (sem www redireciona para o www) |
 
 ---
 
@@ -171,5 +171,5 @@ Padrão MP Assessoria, implementado mesmo sem pedido no briefing.
 ## Deploy
 
 - **Plataforma:** Vercel
-- **Domínio:** _a definir_
+- **Domínio:** https://www.visaosolar.com (projeto Vercel `visao-energy-lp`, Root Directory `visao-energy-lp`)
 - **Branch de produção:** `main`
