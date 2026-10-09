@@ -153,6 +153,8 @@ Padrão MP Assessoria, implementado mesmo sem pedido no briefing.
 **Eventos:** `click_whatsapp`, `click_cta`, `click_phone`, `form_submit`, `scroll_25/50/75/100`, `section_view`.
 **UTMs:** capturar `utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content` e incluir na mensagem do WhatsApp.
 **Env vars:** `NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_GA4_ID`, `NEXT_PUBLIC_META_PIXEL_ID`.
+**IDs:** GTM `GTM-TNQNF884` · GA4 `G-51019MQH3T` · Google Ads conversão WhatsApp `18498532624` / `nNp7CLTZ7pYdEJDq5PRE`.
+**Container GTM versionado:** [tracking/gtm-container-visao-solar.json](tracking/gtm-container-visao-solar.json) (importar no GTM). Passo a passo GTM/GA4/Ads/Vercel em [tracking/README.md](tracking/README.md).
 **Dashboard:** Looker Studio — sessões, conversões, origem/mídia, dispositivo.
 **Referência:** projeto Sólida Transporte.
 

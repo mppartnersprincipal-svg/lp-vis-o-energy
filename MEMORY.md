@@ -26,8 +26,10 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 
 ### Internas (MP)
 - [ ] Revisão visual do Pedro (`npm run dev` em `visao-energy-lp/`)
-- [ ] Criar container GTM + GA4 (e Meta Pixel / Google Ads se houver campanha) e preencher `.env`
-- [ ] Configurar no GTM as conversões: `form_submit`, `click_whatsapp`, `click_cta`
+- [x] GTM `GTM-TNQNF884` ligado no site (`.env.local`) e container JSON gerado em `tracking/`
+- [ ] **Importar `tracking/gtm-container-visao-solar.json` no GTM, testar no Preview e publicar**
+- [ ] GA4: desligar "Interações com formulários" na medição otimizada (evita `form_submit` duplicado), marcar eventos-chave e criar dimensões (ver `tracking/README.md`)
+- [ ] Meta Pixel: só se houver campanha Meta
 - [ ] Dashboard Looker Studio
 - [ ] Repositório GitHub + deploy Vercel + domínio
 
