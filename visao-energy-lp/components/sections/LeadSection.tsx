@@ -7,7 +7,7 @@ const PROMESSAS = ["Visita técnica sem custo", "Resposta rápida pelo WhatsApp"
 /** CTA final — o sol nascendo no horizonte, atrás do formulário. */
 export function LeadSection() {
   return (
-    <section id="orcamento" aria-labelledby="orcamento-titulo" data-section="orcamento" className="secao relative overflow-hidden grao">
+    <section id="orcamento" aria-labelledby="orcamento-titulo" data-section="orcamento" className="cv-auto secao relative overflow-hidden grao">
       {/* Nascer do sol */}
       <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[62%] -translate-x-1/2">
         <div className="respirar size-[150vw] rounded-full bg-[radial-gradient(circle,rgb(247_147_30/0.35)_0%,rgb(229_51_42/0.12)_35%,transparent_62%)] md:size-[110vw]" />

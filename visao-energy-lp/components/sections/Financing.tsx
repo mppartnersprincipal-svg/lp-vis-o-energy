@@ -58,7 +58,7 @@ function AnelNoventaDias() {
 
 export function Financing() {
   return (
-    <section aria-labelledby="financiamento-titulo" id="financiamento" data-section="financiamento" className="secao relative overflow-hidden">
+    <section aria-labelledby="financiamento-titulo" id="financiamento" data-section="financiamento" className="cv-auto secao relative overflow-hidden">
       <div className="container-ve grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <Reveal className="order-2 lg:order-1">
           <AnelNoventaDias />

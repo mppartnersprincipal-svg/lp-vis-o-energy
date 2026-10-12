@@ -11,7 +11,7 @@ export async function Footer() {
   const ano = await anoAtual();
 
   return (
-    <footer className="relative overflow-hidden border-t border-linha pb-28 pt-16 lg:pb-10">
+    <footer className="cv-auto relative overflow-hidden border-t border-linha pb-28 pt-16 lg:pb-10">
       <div className="container-ve grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Logo tamanho={44} />

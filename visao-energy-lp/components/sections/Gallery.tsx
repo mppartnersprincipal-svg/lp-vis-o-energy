@@ -73,7 +73,7 @@ function VideoObra() {
 
 export function Gallery() {
   return (
-    <section id="obras" aria-labelledby="obras-titulo" data-section="obras" className="secao bg-noite-900">
+    <section id="obras" aria-labelledby="obras-titulo" data-section="obras" className="cv-auto secao bg-noite-900">
       <div className="container-ve">
         <Reveal className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div>

@@ -74,12 +74,12 @@ export function SolarHero() {
         </div>
 
         {/* Sol-janela com a obra */}
-        <div className="hero-janela nascer absolute inset-0">
+        <div className="hero-janela nascer-lcp absolute inset-0">
           <Image
             src="/images/obra-comercial.webp"
             alt="Usina solar comercial instalada pela Visão Solar em telhado metálico, em Goiás"
             fill
-            priority
+            loading="eager"
             quality={80}
             sizes="100vw"
             className="object-cover"
@@ -109,15 +109,13 @@ export function SolarHero() {
 
               <h1
                 id="hero-titulo"
-                className="titulo-display surgir mt-5 text-balance text-[clamp(2.75rem,1.2rem+5.6vw,6.4rem)] [@media(max-height:700px)]:text-[2.5rem] lg:[@media(max-height:820px)]:text-[5rem]"
-                style={{ ["--d" as string]: "220ms" }}
+                className="titulo-display surgir-lcp mt-5 text-balance text-[clamp(2.75rem,1.2rem+5.6vw,6.4rem)] [@media(max-height:700px)]:text-[2.5rem] lg:[@media(max-height:820px)]:text-[5rem]"
               >
                 Economize até <span className="texto-sol">95%</span> na sua conta de luz.
               </h1>
 
               <p
-                className="surgir mt-6 max-w-[34rem] text-[clamp(1.02rem,0.95rem+0.4vw,1.22rem)] leading-relaxed text-texto-suave"
-                style={{ ["--d" as string]: "360ms" }}
+                className="surgir-lcp mt-6 max-w-[34rem] text-[clamp(1.02rem,0.95rem+0.4vw,1.22rem)] leading-relaxed text-texto-suave"
               >
                 Projeto, instalação e monitoramento da sua usina solar, com financiamento e{" "}
                 <strong className="font-semibold text-texto">90 dias de carência</strong> para começar a pagar.

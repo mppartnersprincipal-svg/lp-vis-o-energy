@@ -25,7 +25,7 @@ function SeloGarantia() {
 
 export function Guarantees() {
   return (
-    <section id="garantias" aria-labelledby="garantias-titulo" data-section="garantias" className="secao">
+    <section id="garantias" aria-labelledby="garantias-titulo" data-section="garantias" className="cv-auto secao">
       <div className="container-ve">
         <Reveal className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div>

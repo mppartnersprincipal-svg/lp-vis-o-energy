@@ -312,6 +312,60 @@ html.lenis body {
     transform: none;
   }
 }
+/* Seções abaixo da dobra: o navegador só calcula estilo/layout/pintura quando se aproximam da tela
+   (corta ~1 s de trabalho antes da 1ª pintura no celular). `auto` faz o navegador lembrar a altura
+   real depois da 1ª renderização. html.cv-off desliga tudo antes de um salto por âncora (AnchorGuard). */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+html.cv-off .cv-auto {
+  content-visibility: visible;
+}
+
+/* Entrada das seções (components/motion/Reveal.tsx) */
+.revelar {
+  opacity: 0;
+  transform: translate3d(0, var(--revelar-y, 28px), 0);
+  transition:
+    opacity 0.9s var(--ease-solar) var(--revelar-delay, 0ms),
+    transform 1.1s var(--ease-solar) var(--revelar-delay, 0ms);
+}
+.revelar[data-visivel] {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .revelar {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Variantes para o que pode ser o LCP (título, subtítulo, foto do sol): visíveis desde o 1º quadro,
+   só com movimento. O Chrome ignora elementos com opacity 0 no LCP e só os conta após o fade. */
+@keyframes surgir-lcp {
+  from {
+    transform: translate3d(0, 26px, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+.surgir-lcp {
+  animation: surgir-lcp 1.1s var(--ease-solar) both;
+}
+@keyframes nascer-lcp {
+  from {
+    transform: translate3d(0, 18%, 0) scale(0.82);
+  }
+  to {
+    transform: none;
+  }
+}
+.nascer-lcp {
+  animation: nascer-lcp 1.8s var(--ease-solar) both;
+}
 .nascer {
   animation: nascer 1.8s var(--ease-solar) both;
   animation-delay: 150ms;

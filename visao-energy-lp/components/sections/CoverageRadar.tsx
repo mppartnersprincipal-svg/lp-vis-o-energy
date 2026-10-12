@@ -42,7 +42,7 @@ function Radar() {
 
 export function CoverageRadar() {
   return (
-    <section aria-labelledby="atendimento-titulo" id="atendimento" data-section="atendimento" className="secao bg-noite-900">
+    <section aria-labelledby="atendimento-titulo" id="atendimento" data-section="atendimento" className="cv-auto secao bg-noite-900">
       <div className="container-ve grid items-center gap-14 lg:grid-cols-[1fr_1.1fr]">
         <Reveal>
           <p className="eyebrow">Onde atendemos</p>

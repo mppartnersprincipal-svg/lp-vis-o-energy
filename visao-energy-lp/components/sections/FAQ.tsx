@@ -59,7 +59,7 @@ export function FAQ() {
   const [aberto, setAberto] = useState<number | null>(0);
 
   return (
-    <section id="duvidas" aria-labelledby="faq-titulo" data-section="faq" className="secao">
+    <section id="duvidas" aria-labelledby="faq-titulo" data-section="faq" className="cv-auto secao">
       <div className="container-ve grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <Reveal className="lg:sticky lg:top-28 lg:self-start">
           <p className="eyebrow">Dúvidas frequentes</p>

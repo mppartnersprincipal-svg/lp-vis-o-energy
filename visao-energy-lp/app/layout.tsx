@@ -1,14 +1,17 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, JetBrains_Mono, Manrope } from "next/font/google";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { AnchorGuard } from "@/components/motion/AnchorGuard";
 import { TrackingProvider } from "@/components/tracking/TrackingProvider";
 import { SITE_URL } from "@/lib/constants";
 import { GTM_ID } from "@/lib/tracking";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"], display: "swap" });
-const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], display: "swap" });
-const jetbrains = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["latin"], weight: ["500"], display: "swap" });
+// Sem preload: no 4G as fontes disputavam banda com o CSS (único recurso que bloqueia a 1ª pintura).
+// display: swap + fallback ajustado pelo next/font = texto visível na hora, sem salto de layout.
+const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"], display: "swap", preload: false });
+const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], display: "swap", preload: false });
+const jetbrains = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["latin"], weight: ["500"], display: "swap", preload: false });
 
 const TITULO = "Energia Solar em Goiânia | Economize até 95% na Conta de Luz | Visão Solar";
 const DESCRICAO =
@@ -54,6 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#conteudo" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-sol-500 focus:px-5 focus:py-3 focus:font-bold focus:text-noite-950">
           Pular para o conteúdo
         </a>
+        <AnchorGuard />
         <SmoothScroll />
         <TrackingProvider />
         {children}

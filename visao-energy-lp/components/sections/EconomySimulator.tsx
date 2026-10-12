@@ -43,7 +43,7 @@ export function EconomySimulator() {
   }
 
   return (
-    <section id="simulador" aria-labelledby="simulador-titulo" data-section="simulador" className="secao relative overflow-hidden bg-noite-900">
+    <section id="simulador" aria-labelledby="simulador-titulo" data-section="simulador" className="cv-auto secao relative overflow-hidden bg-noite-900">
       <div aria-hidden="true" className="pointer-events-none absolute -right-40 -top-40 size-[640px] rounded-full bg-[radial-gradient(circle,rgb(247_147_30/0.16),transparent_65%)]" />
 
       <div className="container-ve relative grid gap-12 lg:grid-cols-[1fr_1.08fr] lg:gap-16">
