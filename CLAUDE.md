@@ -184,5 +184,6 @@ Padrão MP Assessoria. GA4/Ads/Pixel **só pelo GTM**, nunca no código.
 - **Domínio:** https://www.visaosolar.com (DNS na **Hostinger**)
 - **Branch de produção:** `main` (push = deploy automático)
 - **Variáveis:** lista em `visao-energy-lp/.env.example`. `NEXT_PUBLIC_*` como Config (públicas); as do painel como Secret. **Toda variável nova só vale após redeploy** (`vercel redeploy <url> --target production`)
+- **Performance:** seções abaixo da dobra têm `.cv-auto` (content-visibility); seção nova abaixo da dobra deve receber a classe. Elementos do hero que podem ser LCP não podem começar com `opacity: 0` (usar `surgir-lcp`/`nascer-lcp`). Não tirar o preload da Bricolage/Manrope (CLS). Saltos por âncora dependem do `AnchorGuard` + `getLenis().resize()`
 - **Pegadinhas já vistas:** `DASHBOARD_SECRET` < 16 caracteres faz o login responder "Dashboard não configurado"; `vercel link` reescreve o `.env.local` e acrescenta `.env*` no `.gitignore` (remover a duplicata para o `.env.example` não ser ignorado)
 - O Claude **não** lê credenciais de outros projetos, **não** grava variáveis na Vercel e o `delete` pelo MCP do Supabase é recusado: passar ao Pedro

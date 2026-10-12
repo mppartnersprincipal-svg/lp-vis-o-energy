@@ -42,7 +42,7 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 - [ ] **Supabase:** limpar as visitas de teste (SQL Editor): `delete from public.visaosolar_sessions;` (os eventos saem em cascata)
 - [ ] **Dashboard:** conferir abas Google Ads (nome da conta = Visão Solar, não M|P) e GA4 (conta de serviço como Leitor na propriedade 558194391)
 - [ ] **Search Console:** conferir em ~48 h se o sitemap mudou para "Sucesso"; usar "Inspecionar URL → Testar URL publicado → Solicitar indexação" na home. Se continuar erro, remover e reenviar o sitemap
-- [ ] **Performance (LCP mobile 4,0 s no Lighthouse, desktop 0,8 s):** otimizações propostas e ainda não aplicadas (ver Decisões/Histórico): hero visível no 1º quadro (sem entrada a partir de opacity 0), `content-visibility: auto` nas seções abaixo da dobra, pausar animações infinitas fora da tela, carregar GTM/Lenis depois do 1º paint. Meta ≈ 1,8–2,2 s
+- [x] Performance otimizada em 2026-10-12 (ver Decisões/Histórico). Próximo, se quiser subir mais a nota mobile: reduzir hidratação (seções sem interação como Server Components puros) e conferir no PageSpeed Insights do Google (a API pública estava sem cota)
 - [ ] Vincular Search Console ao GA4
 - [ ] Meta Pixel: só se houver campanha Meta (ID ainda não passado)
 - [ ] Renomear repo/pasta para "visao-solar" (opcional; hoje `lp-vis-o-energy` / `visao-energy-lp`)
@@ -73,6 +73,12 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 | 2026-10-09 | `pushEvent` zera parâmetros (RESET) a cada push | O GTM herdava `secao`/`local` do evento anterior |
 | 2026-10-09 | Seção da conta de luz com `id="conta-de-luz"` | `id="conta"` colidia com o campo do formulário e quebrava o `<label>` |
 | 2026-10-09 | Search Console como propriedade **Domínio** (TXT na Hostinger) | Cobre www/sem www/http/https; DNS do domínio está na Hostinger (dns-parking.com) |
+| 2026-10-12 | Hero (título, subtítulo, foto) visível no 1º quadro: entrada só com transform (`surgir-lcp`, `nascer-lcp`) | O Chrome ignora elementos com opacity 0 no LCP; o título só contava depois do fade |
+| 2026-10-12 | `content-visibility: auto` (`.cv-auto`) nas seções abaixo da dobra + `AnchorGuard` | Metade do estilo/layout antes da 1ª pintura; o guard desliga o recurso e faz `lenis.resize()` antes de saltos por âncora (senão o mobile parava ~620 px antes) |
+| 2026-10-12 | `Reveal` em CSS + 1 IntersectionObserver (sem react-spring) | 18 springs pesavam na hidratação (TBT) |
+| 2026-10-12 | GTM `lazyOnload`; Lenis no ocioso; foto do hero sem prioridade alta; logo pré-carregado só na navbar | Tirar trabalho e banda do caminho da 1ª pintura |
+| 2026-10-12 | Fontes Bricolage e Manrope **com** preload (só a mono sem) | Sem preload a troca de fonte deslocava o hero: CLS 0,096 no desktop |
+| 2026-10-12 | Lenis `anchors: true` (sem offset) | O offset −72 somava com o `scroll-margin-top`: âncoras paravam a 156 px em vez de 84 |
 
 ---
 
@@ -90,3 +96,4 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 | 2026-10-09 | Dashboard `/dashboard` construído: coletor, 5 rotas, painel com a marca, migration `visaosolar_*` aplicada no Supabase compartilhado, 83 testes do painel + 20 da LP |
 | 2026-10-09 | Deploy na Vercel em www.visaosolar.com; variáveis cadastradas; corrigidos `DASHBOARD_SECRET` curto e `NEXT_PUBLIC_SITE_URL` (.com.br → www.visaosolar.com) + redeploys; visita qa-seed gravou no Supabase; login do painel ok |
 | 2026-10-09 | Search Console: propriedade Domínio verificada (TXT na Hostinger) e sitemap enviado; arquivo validado como Googlebot (200, XML) |
+| 2026-10-12 | Otimização de velocidade (ver Decisões). A/B local na mesma rodada: nota mobile 48→65, LCP 9,2→3,9 s, TBT 1.207→876 ms. Produção: desktop 98–99 (CLS 0); mobile 66–78 (antes 72–77), LCP 3,0–3,4 s agora medido no título real (antes media o botão da navbar porque o título estava invisível). Âncoras corrigidas (84 px) |
