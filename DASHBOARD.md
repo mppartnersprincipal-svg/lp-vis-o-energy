@@ -41,13 +41,20 @@ e navegadores in-app descartam o beacon de saída.
 
 **`cta_id`** (gerado de `data-track-local` por `ctaIdFor`):
 
-| WhatsApp | CTA |
+| WhatsApp | CTA (âncora na página) |
 |---|---|
-| `fab_whatsapp` (flutuante desktop) | `cta_navbar` |
-| `cta_whatsapp_barra_mobile` | `cta_hero` |
-| `cta_whatsapp_faq` | `cta_hero_simulador` |
-| `cta_whatsapp_rodape` | `cta_simulador` |
-| `cta_whatsapp_formulario` | `cta_financiamento`, `cta_barra_mobile` |
+| `fab_whatsapp` (flutuante desktop) | `cta_hero_simulador` (rola até o simulador) |
+| `cta_whatsapp_barra_mobile` (ícone) | |
+| `cta_whatsapp_barra_mobile_orcamento` (botão "Orçamento Gratuito") | |
+| `cta_whatsapp_navbar` · `cta_whatsapp_hero` | |
+| `cta_whatsapp_simulador` (leva a conta simulada na mensagem) | |
+| `cta_whatsapp_financiamento` · `cta_whatsapp_faq` · `cta_whatsapp_rodape` | |
+| `cta_whatsapp_formulario` (envio do formulário) | |
+
+Desde 14/10/2026 os botões de orçamento (navbar, hero, simulador, financiamento, barra mobile) abrem o
+WhatsApp direto pelo componente `components/ui/WhatsAppCta.tsx` (mensagem com UTMs montada no clique) e
+contam como `click_whatsapp`, ou seja, **disparam a conversão do Google Ads**. Os ids antigos `cta_navbar`,
+`cta_hero`, `cta_simulador`, `cta_financiamento` e `cta_barra_mobile` só aparecem em dados anteriores.
 
 Ao criar botão novo: dar `data-track-local` e incluir o rótulo em `CTA` no `public/dashboard/app.js`.
 Seção nova: `id` na `<section>` + `SECTIONS`/`SECTION_LABEL` em `lib/painel/report.js` + `SECTION` no `app.js`.

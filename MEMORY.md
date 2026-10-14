@@ -79,6 +79,7 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 | 2026-10-12 | GTM `lazyOnload`; Lenis no ocioso; foto do hero sem prioridade alta; logo pré-carregado só na navbar | Tirar trabalho e banda do caminho da 1ª pintura |
 | 2026-10-12 | Fontes Bricolage e Manrope **com** preload (só a mono sem) | Sem preload a troca de fonte deslocava o hero: CLS 0,096 no desktop |
 | 2026-10-12 | Lenis `anchors: true` (sem offset) | O offset −72 somava com o `scroll-margin-top`: âncoras paravam a 156 px em vez de 84 |
+| 2026-10-14 | CTAs de orçamento (navbar, hero, simulador, financiamento, barra mobile) abrem o WhatsApp direto via `WhatsAppCta`, sem passar pelo formulário | Pedido do Pedro para a campanha de Pesquisa: menos atrito, e o clique vira `click_whatsapp` (conversão do Ads). Mensagem leva UTMs e, no simulador, a conta |
 
 ---
 
@@ -97,3 +98,4 @@ Memória do projeto entre sessões. Contexto fixo do projeto fica no [CLAUDE.md]
 | 2026-10-09 | Deploy na Vercel em www.visaosolar.com; variáveis cadastradas; corrigidos `DASHBOARD_SECRET` curto e `NEXT_PUBLIC_SITE_URL` (.com.br → www.visaosolar.com) + redeploys; visita qa-seed gravou no Supabase; login do painel ok |
 | 2026-10-09 | Search Console: propriedade Domínio verificada (TXT na Hostinger) e sitemap enviado; arquivo validado como Googlebot (200, XML) |
 | 2026-10-12 | Otimização de velocidade (ver Decisões). A/B local na mesma rodada: nota mobile 48→65, LCP 9,2→3,9 s, TBT 1.207→876 ms. Produção: desktop 98–99 (CLS 0); mobile 66–78 (antes 72–77), LCP 3,0–3,4 s agora medido no título real (antes media o botão da navbar porque o título estava invisível). Âncoras corrigidas (84 px) |
+| 2026-10-14 | Plano da campanha de Pesquisa do Google Ads em `google-ads/` (fora do git: repo público). CTAs de orçamento passam a abrir o WhatsApp direto (ver Decisões); `LeadContext` ficou sem quem grave a conta (formulário segue funcionando sem pré-preenchimento) |
