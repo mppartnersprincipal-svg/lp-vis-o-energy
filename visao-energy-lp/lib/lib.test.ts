@@ -2,7 +2,7 @@ import { describe, expect, test, beforeEach, vi } from "vitest";
 import { simulateEconomy, clampConta, CONTA_MIN, CONTA_MAX, CUSTO_MINIMO } from "./simulator";
 import { formatBRL, parseBRL, maskPhone } from "./format";
 import { parseUtms, storeUtms, readStoredUtms } from "./utm";
-import { validateLead, buildLeadMessage, buildWhatsAppUrl } from "./lead";
+import { validateLead, buildLeadMessage, buildCtaMessage, buildWhatsAppUrl, DEFAULT_WHATSAPP_MESSAGE } from "./lead";
 import { ctaIdFor, pushEvent } from "./tracking";
 
 describe("simulateEconomy", () => {
@@ -120,6 +120,18 @@ describe("lead", () => {
 
   test("omite origem quando não há UTMs", () => {
     expect(buildLeadMessage(leadValido)).not.toContain("Origem");
+  });
+
+  test("mensagem do CTA leva conta do simulador e origem da campanha", () => {
+    const msg = buildCtaMessage({ utm_source: "google", utm_medium: "cpc" }, 600);
+    expect(msg.startsWith(DEFAULT_WHATSAPP_MESSAGE)).toBe(true);
+    expect(msg).toMatch(/Conta de luz média:\* R\$\s600/);
+    expect(msg).toContain("_Origem: google / cpc_");
+  });
+
+  test("mensagem do CTA sem conta nem UTM é a mensagem padrão", () => {
+    expect(buildCtaMessage()).toBe(DEFAULT_WHATSAPP_MESSAGE);
+    expect(buildCtaMessage({}, 0)).toBe(DEFAULT_WHATSAPP_MESSAGE);
   });
 
   test("gera link wa.me com a mensagem codificada", () => {

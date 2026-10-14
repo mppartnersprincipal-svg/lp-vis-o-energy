@@ -5,8 +5,8 @@ import { animated, useSpring, type SpringValue } from "@react-spring/web";
 import { CONTA_MAX, CONTA_MIN, simulateEconomy } from "@/lib/simulator";
 import { formatBRL } from "@/lib/format";
 import { pushEvent } from "@/lib/tracking";
-import { useLead } from "@/components/LeadContext";
 import { GlowCard } from "@/components/ui/GlowCard";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Reveal } from "@/components/motion/Reveal";
 import { IconArrow } from "@/components/ui/Icons";
 
@@ -18,7 +18,6 @@ const decimal = (v: number) => v.toLocaleString("pt-BR", { minimumFractionDigits
 
 export function EconomySimulator() {
   const [conta, setConta] = useState(VALOR_INICIAL);
-  const { setContaSimulada } = useLead();
   const r = simulateEconomy(conta);
 
   const s = useSpring({
@@ -123,16 +122,10 @@ export function EconomySimulator() {
               </Dado>
             </dl>
 
-            <a
-              href="#orcamento"
-              onClick={() => setContaSimulada(conta)}
-              className="btn-sol mt-8 w-full"
-              data-track="click_cta"
-              data-track-local="simulador"
-            >
+            <WhatsAppCta local="simulador" conta={conta} className="btn-sol mt-8 w-full">
               Quero o orçamento com esse valor
               <IconArrow width={20} height={20} />
-            </a>
+            </WhatsAppCta>
             <p className="mt-4 text-center text-xs leading-relaxed text-texto-fraco">
               Estimativa com base na irradiação média de Goiás e na tarifa média local. O valor exato é definido na
               visita técnica gratuita.

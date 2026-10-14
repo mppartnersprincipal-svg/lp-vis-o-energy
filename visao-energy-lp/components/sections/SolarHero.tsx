@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useScrollProgress, smoothstep } from "@/hooks/useScrollProgress";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { IconArrow } from "@/components/ui/Icons";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { EMPRESA } from "@/lib/constants";
 
 /**
@@ -122,10 +123,10 @@ export function SolarHero() {
               </p>
 
               <div className="surgir mt-8 flex flex-col gap-3 sm:flex-row" style={{ ["--d" as string]: "480ms" }}>
-                <a href="#orcamento" className="btn-sol" data-track="click_cta" data-track-local="hero">
+                <WhatsAppCta local="hero" className="btn-sol">
                   Quero meu orçamento gratuito
                   <IconArrow width={20} height={20} />
-                </a>
+                </WhatsAppCta>
                 <a href="#simulador" className="btn-ghost hidden sm:inline-flex" data-track="click_cta" data-track-local="hero-simulador">
                   Simular minha economia
                 </a>

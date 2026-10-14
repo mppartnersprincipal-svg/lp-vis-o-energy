@@ -3,6 +3,7 @@
 import { useInView } from "@react-spring/web";
 import { Reveal } from "@/components/motion/Reveal";
 import { IconArrow, IconCheck } from "@/components/ui/Icons";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 
 const MARCAS = Array.from({ length: 90 }, (_, i) => i);
 const VANTAGENS = [
@@ -90,10 +91,10 @@ export function Financing() {
           </ul>
 
           <Reveal delay={300}>
-            <a href="#orcamento" className="btn-sol mt-10" data-track="click_cta" data-track-local="financiamento">
+            <WhatsAppCta local="financiamento" className="btn-sol mt-10">
               Simular meu financiamento
               <IconArrow width={20} height={20} />
-            </a>
+            </WhatsAppCta>
           </Reveal>
         </div>
       </div>

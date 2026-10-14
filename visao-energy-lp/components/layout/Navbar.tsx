@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/ui/Logo";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 
 const LINKS = [
   { href: "#simulador", rotulo: "Simulador" },
@@ -42,10 +43,10 @@ export function Navbar() {
           ))}
         </ul>
 
-        <a href="#orcamento" className="btn-sol min-h-11 whitespace-nowrap px-5 text-sm" data-track="click_cta" data-track-local="navbar">
+        <WhatsAppCta local="navbar" className="btn-sol min-h-11 whitespace-nowrap px-5 text-sm">
           <span className="sm:hidden">Orçamento grátis</span>
           <span className="hidden sm:inline">Orçamento Gratuito</span>
-        </a>
+        </WhatsAppCta>
       </nav>
     </header>
   );

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { IconWhatsApp } from "@/components/ui/Icons";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { buildWhatsAppUrl, DEFAULT_WHATSAPP_MESSAGE } from "@/lib/lead";
 
 const WHATSAPP_URL = buildWhatsAppUrl(DEFAULT_WHATSAPP_MESSAGE);
@@ -58,9 +59,9 @@ export function FloatingActions() {
           >
             <IconWhatsApp width={26} height={26} />
           </a>
-          <a href="#orcamento" tabIndex={visivel ? 0 : -1} className="btn-sol flex-1" data-track="click_cta" data-track-local="barra-mobile">
+          <WhatsAppCta local="barra-mobile-orcamento" tabIndex={visivel ? 0 : -1} className="btn-sol flex-1">
             Orçamento Gratuito
-          </a>
+          </WhatsAppCta>
         </div>
       </div>
 

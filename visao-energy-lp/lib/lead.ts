@@ -30,9 +30,19 @@ export function buildLeadMessage(lead: LeadInput, utms: UtmParams = {}): string 
     `*Cidade:* ${lead.cidade.trim()}`,
     `*Conta de luz média:* ${formatBRL(lead.conta)}`,
   ];
+  return [...linhas, ...linhasDeOrigem(utms)].join("\n");
+}
+
+/** Mensagem dos botões de CTA que abrem o WhatsApp direto (sem passar pelo formulário). */
+export function buildCtaMessage(utms: UtmParams = {}, conta?: number): string {
+  const linhas = [DEFAULT_WHATSAPP_MESSAGE];
+  if (conta && Number.isFinite(conta) && conta > 0) linhas.push("", `*Conta de luz média:* ${formatBRL(conta)}`);
+  return [...linhas, ...linhasDeOrigem(utms)].join("\n");
+}
+
+function linhasDeOrigem(utms: UtmParams): string[] {
   const origem = [utms.utm_source, utms.utm_medium, utms.utm_campaign].filter(Boolean).join(" / ");
-  if (origem) linhas.push("", `_Origem: ${origem}_`);
-  return linhas.join("\n");
+  return origem ? ["", `_Origem: ${origem}_`] : [];
 }
 
 export function buildWhatsAppUrl(mensagem: string, numero: string = WHATSAPP_NUMBER): string {
